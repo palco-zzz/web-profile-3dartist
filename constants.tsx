@@ -296,6 +296,194 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
+  {
+    id: "bathroom-architecture",
+    title: "Modern Bathroom",
+    category: "Architecture",
+    polycount: 45000,
+    software: ["Blender", "Substance 3D Painter"],
+    description:
+      "A modern bathroom interior design featuring realistic tile work, fixtures, and lighting. This architectural visualization showcases attention to detail in material texturing, proper space planning, and photorealistic rendering techniques for interior design.",
+    images: {
+      hero: "/architecture/bathroom/novendry-anggara-putra-untitled1.jpg",
+      beauty: [
+        "/architecture/bathroom/novendry-anggara-putra-untitled2.jpg",
+        "/architecture/bathroom/novendry-anggara-putra-untitled4.jpg",
+      ],
+      wireframe: "/architecture/bathroom/novendry-anggara-putra-untitled4.jpg",
+      textures: [
+        {
+          name: "View 1",
+          url: "/architecture/bathroom/novendry-anggara-putra-untitled1.jpg",
+        },
+        {
+          name: "View 2",
+          url: "/architecture/bathroom/novendry-anggara-putra-untitled2.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "indomart-architecture",
+    title: "Indomart Store",
+    category: "Architecture",
+    polycount: 35000,
+    software: ["Blender"],
+    description:
+      "An architectural visualization of an Indomart convenience store featuring accurate brand representation, commercial interior layout, and retail space design. This project demonstrates expertise in commercial architectural modeling and realistic lighting for retail environments.",
+    images: {
+      hero: "/architecture/indomart/novendry-anggara-putra-indomaret.jpg",
+      beauty: ["/architecture/indomart/novendry-anggara-putra-indomaret.jpg"],
+      wireframe: "/architecture/indomart/novendry-anggara-putra-indomaret.jpg",
+      textures: [
+        {
+          name: "Store View",
+          url: "/architecture/indomart/novendry-anggara-putra-indomaret.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "lowpoly-island-architecture",
+    title: "Lowpoly Island",
+    category: "Architecture",
+    polycount: 8000,
+    software: ["Blender"],
+    description:
+      "A stylized low-poly island environment featuring minimalist design, vibrant colors, and clean geometry. This architectural piece showcases environment design with optimized topology, perfect for game development or stylized visualization projects.",
+    images: {
+      hero: "/architecture/lowpoly-island/novendry-anggara-putra-render-2.jpg",
+      beauty: [
+        "/architecture/lowpoly-island/novendry-anggara-putra-render-3.jpg",
+        "/architecture/lowpoly-island/novendry-anggara-putra-render-4.jpg",
+      ],
+      wireframe:
+        "/architecture/lowpoly-island/novendry-anggara-putra-render-4.jpg",
+      textures: [
+        {
+          name: "Island View",
+          url: "/architecture/lowpoly-island/novendry-anggara-putra-render-2.jpg",
+        },
+        {
+          name: "Alternate Angle",
+          url: "/architecture/lowpoly-island/novendry-anggara-putra-render-3.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "malioboro-streetlight-architecture",
+    title: "Malioboro Street Light",
+    category: "Architecture",
+    polycount: 15000,
+    software: ["Blender"],
+    description:
+      "A detailed 3D model of the iconic Malioboro street lamp featuring accurate Indonesian cultural design elements. This asset showcases precise hard-surface modeling, multiple rendering engines (Cycles, Eevee, Workbench), and comprehensive wireframe documentation.",
+    images: {
+      hero: "/architecture/malioboro-street-light/novendry-streetlamp-uplox-cycles.jpg",
+      beauty: [
+        "/architecture/malioboro-street-light/novendry-streetlamp-uplox-eevee.jpg",
+        "/architecture/malioboro-street-light/novendry-streetlamp-uplox-mesh.jpg",
+        "/architecture/malioboro-street-light/novendry-streetlamp-uplox-workbench.jpg",
+      ],
+      wireframe:
+        "/architecture/malioboro-street-light/novendry-streetlamp-uplox-mesh.jpg",
+      textures: [
+        {
+          name: "Cycles Render",
+          url: "/architecture/malioboro-street-light/novendry-streetlamp-uplox-cycles.jpg",
+        },
+        {
+          name: "Eevee Render",
+          url: "/architecture/malioboro-street-light/novendry-streetlamp-uplox-eevee.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "tavern-architecture",
+    title: "Tavern",
+    category: "Architecture",
+    polycount: 32000,
+    software: ["Blender", "Substance 3D Painter"],
+    description:
+      "A fantasy medieval tavern building featuring stylized architecture, detailed wooden texturing, and atmospheric lighting. This environment asset demonstrates game-ready architectural modeling for fantasy settings with proper UV unwrapping and PBR textures.",
+    images: {
+      hero: "/architecture/tavern/novendry-anggara-putra-tavern-front1.jpg",
+      beauty: ["/architecture/tavern/novendry-anggara-putra-tavern-back1.jpg"],
+      wireframe: "/architecture/tavern/novendry-anggara-putra-tavern-back1.jpg",
+      textures: [
+        {
+          name: "Front View",
+          url: "/architecture/tavern/novendry-anggara-putra-tavern-front1.jpg",
+        },
+        {
+          name: "Back View",
+          url: "/architecture/tavern/novendry-anggara-putra-tavern-back1.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "the-author-2dart",
+    title: "The Author",
+    category: "2D Art",
+    polycount: 0,
+    software: ["Photoshop", "Illustrator"],
+    description:
+      "A digital portrait featuring detailed character illustration with emphasis on facial features and expression. This artwork showcases digital painting techniques, color theory, and portrait composition in a professional illustration style.",
+    images: {
+      hero: "/2d-art/The-author/novendry-anggara-putra-potrait-2.jpg",
+      beauty: ["/2d-art/The-author/novendry-anggara-putra-potrait-2.jpg"],
+      wireframe: "/2d-art/The-author/novendry-anggara-putra-potrait-2.jpg",
+      textures: [
+        {
+          name: "Portrait",
+          url: "/2d-art/The-author/novendry-anggara-putra-potrait-2.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "asian-woman-2dart",
+    title: "Asian Woman",
+    category: "2D Art",
+    polycount: 0,
+    software: ["Photoshop", "Illustrator"],
+    description:
+      "A stylized digital portrait of an Asian woman showcasing refined digital painting skills with attention to skin tones, lighting, and facial anatomy. This piece demonstrates proficiency in character illustration and digital art techniques.",
+    images: {
+      hero: "/2d-art/asian woman/novendry-anggara-putra-potrait-3.jpg",
+      beauty: ["/2d-art/asian woman/novendry-anggara-putra-potrait-3.jpg"],
+      wireframe: "/2d-art/asian woman/novendry-anggara-putra-potrait-3.jpg",
+      textures: [
+        {
+          name: "Portrait",
+          url: "/2d-art/asian woman/novendry-anggara-putra-potrait-3.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "hijab-portrait-2dart",
+    title: "Hijab Portrait",
+    category: "2D Art",
+    polycount: 0,
+    software: ["Photoshop", "Illustrator"],
+    description:
+      "A respectful and artistic portrait featuring a woman in hijab. This digital illustration demonstrates cultural sensitivity combined with strong artistic fundamentals in character design, fabric rendering, and portrait composition.",
+    images: {
+      hero: "/2d-art/hijab/novendry-anggara-putra-amal-01-01.jpg",
+      beauty: ["/2d-art/hijab/novendry-anggara-putra-amal-01-01.jpg"],
+      wireframe: "/2d-art/hijab/novendry-anggara-putra-amal-01-01.jpg",
+      textures: [
+        {
+          name: "Portrait",
+          url: "/2d-art/hijab/novendry-anggara-putra-amal-01-01.jpg",
+        },
+      ],
+    },
+  },
 ];
 
 export const SKILLS: Skill[] = [
