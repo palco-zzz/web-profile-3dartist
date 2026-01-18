@@ -34,14 +34,18 @@ const AllProjects: React.FC = () => {
   return (
     <div className="bg-[#050505] min-h-screen w-full text-white">
       {/* Navigation & Header */}
-      <div className="pt-8 px-6 md:px-12 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div className="pt-32 px-6 md:px-12 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 group clickable mb-6 opacity-60 hover:opacity-100 transition-opacity"
+            className="fixed top-8 left-8 z-50 w-14 h-14 bg-white text-black border border-white/20 rounded-full flex items-center justify-center group overflow-hidden transition-all duration-500 hover:w-48 hover:justify-start hover:pl-5 shadow-[0_0_30px_rgba(255,255,255,0.1)] clickable hover:bg-black hover:text-white hover:border-white/50"
           >
-            <ArrowLeft size={16} />
-            <span className="font-mono text-xs uppercase tracking-widest">
+            <ArrowLeft
+              size={24}
+              strokeWidth={2}
+              className="shrink-0 transition-transform group-hover:-translate-x-1"
+            />
+            <span className="font-mono text-xs uppercase tracking-widest ml-3 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap duration-300">
               Return Home
             </span>
           </Link>
