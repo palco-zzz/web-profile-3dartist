@@ -297,6 +297,137 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    id: "book-product",
+    title: "Book Design",
+    category: "Product Design",
+    polycount: 5000,
+    software: ["Blender", "Photoshop"],
+    description:
+      "A detailed 3D book model featuring realistic page texturing, cover design, and accurate physical properties. This product visualization demonstrates attention to detail in everyday object modeling with proper material setup for photorealistic rendering.",
+    images: {
+      hero: "/product-design/book/novendry-anggara-putra-view-1.jpg",
+      beauty: [
+        "/product-design/book/novendry-anggara-putra-view-2.jpg",
+        "/product-design/book/novendry-anggara-putra-view-3.jpg",
+        "/product-design/book/novendry-anggara-putra-view-4.jpg",
+      ],
+      wireframe: "/product-design/book/novendry-anggara-putra-view-4.jpg",
+      textures: [
+        {
+          name: "View 1",
+          url: "/product-design/book/novendry-anggara-putra-view-1.jpg",
+        },
+        {
+          name: "View 2",
+          url: "/product-design/book/novendry-anggara-putra-view-2.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "honda-beat-product",
+    title: "Honda Beat",
+    category: "Product Design",
+    polycount: 85000,
+    software: ["Blender", "Substance 3D Painter"],
+    description:
+      "A high-fidelity 3D model of the Honda Beat motorcycle featuring accurate brand representation, detailed mechanical parts, and realistic materials. This vehicle model showcases advanced hard-surface modeling and automotive visualization techniques.",
+    images: {
+      hero: "/product-design/honda-beat/novendry-anggara-putra-final-1.jpg",
+      beauty: ["/product-design/honda-beat/novendry-anggara-putra-final-2.jpg"],
+      wireframe:
+        "/product-design/honda-beat/novendry-anggara-putra-final-2.jpg",
+      textures: [
+        {
+          name: "Final Render 1",
+          url: "/product-design/honda-beat/novendry-anggara-putra-final-1.jpg",
+        },
+        {
+          name: "Final Render 2",
+          url: "/product-design/honda-beat/novendry-anggara-putra-final-2.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "mug-concept-product",
+    title: "Mug Concept",
+    category: "Product Design",
+    polycount: 3000,
+    software: ["Blender", "Photoshop"],
+    description:
+      "A sleek mug design concept featuring modern aesthetics and clean geometric forms. This product visualization demonstrates industrial design principles with focus on form, function, and photorealistic material presentation.",
+    images: {
+      hero: "/product-design/mug-concept/novendry-anggara-putra-mug.jpg",
+      beauty: ["/product-design/mug-concept/novendry-anggara-putra-mug.jpg"],
+      wireframe: "/product-design/mug-concept/novendry-anggara-putra-mug.jpg",
+      textures: [
+        {
+          name: "Mug Render",
+          url: "/product-design/mug-concept/novendry-anggara-putra-mug.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "thousand-sunny-product",
+    title: "Thousand Sunny - One Piece",
+    category: "Product Design",
+    polycount: 125000,
+    software: ["Blender", "Substance 3D Painter"],
+    description:
+      "A detailed replica of the Thousand Sunny ship from One Piece anime. This complex model features intricate wooden texturing, mechanical details, and faithful recreation of the iconic vessel showcasing advanced modeling and texturing for collectible figure visualization.",
+    images: {
+      hero: "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final.jpg",
+      beauty: [
+        "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final1.jpg",
+        "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final2.jpg",
+        "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final4.jpg",
+        "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final5.jpg",
+      ],
+      wireframe:
+        "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final5.jpg",
+      textures: [
+        {
+          name: "Main View",
+          url: "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final.jpg",
+        },
+        {
+          name: "Detail View",
+          url: "/product-design/thousand-sunny-one piece/novendry-anggara-putra-thousan-sunny-final1.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "touch-parfume-product",
+    title: "Touch Parfume",
+    category: "Product Design",
+    polycount: 6000,
+    software: ["Blender", "Photoshop"],
+    description:
+      "An elegant perfume bottle design featuring glass transparency, liquid simulation, and luxury product presentation. This visualization demonstrates expertise in cosmetic product rendering with realistic glass materials and professional studio lighting.",
+    images: {
+      hero: "/product-design/touch parfume/novendry-anggara-putra-untitled17.jpg",
+      beauty: [
+        "/product-design/touch parfume/novendry-anggara-putra-untitled15.jpg",
+        "/product-design/touch parfume/novendry-anggara-putra-untitled16.jpg",
+      ],
+      wireframe:
+        "/product-design/touch parfume/novendry-anggara-putra-untitled16.jpg",
+      textures: [
+        {
+          name: "Main Render",
+          url: "/product-design/touch parfume/novendry-anggara-putra-untitled17.jpg",
+        },
+        {
+          name: "Alternate View",
+          url: "/product-design/touch parfume/novendry-anggara-putra-untitled15.jpg",
+        },
+      ],
+    },
+  },
+  {
     id: "bathroom-architecture",
     title: "Modern Bathroom",
     category: "Architecture",
@@ -480,6 +611,254 @@ export const PROJECTS: Project[] = [
         {
           name: "Portrait",
           url: "/2d-art/hijab/novendry-anggara-putra-amal-01-01.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "colorized-eye-drawing",
+    title: "Colorized Eye",
+    category: "Freehand Drawing",
+    polycount: 0,
+    software: ["Pencil", "Colored Pencils"],
+    description:
+      "A detailed freehand drawing of a realistic eye featuring intricate iris details, expressive shading, and vibrant color work. This piece demonstrates mastery of traditional drawing fundamentals including anatomy, light/shadow, and color pencil techniques.",
+    images: {
+      hero: "/freehand-drawing/colorized-eye/novendry-anggara-putra-novendry-anggara-13102022-0005.jpg",
+      beauty: [
+        "/freehand-drawing/colorized-eye/novendry-anggara-putra-novendry-anggara-13102022-0005.jpg",
+      ],
+      wireframe:
+        "/freehand-drawing/colorized-eye/novendry-anggara-putra-novendry-anggara-13102022-0005.jpg",
+      textures: [
+        {
+          name: "Eye Drawing",
+          url: "/freehand-drawing/colorized-eye/novendry-anggara-putra-novendry-anggara-13102022-0005.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "elephant-drawing",
+    title: "Elephant",
+    category: "Freehand Drawing",
+    polycount: 0,
+    software: ["Pencil", "Charcoal"],
+    description:
+      "A powerful elephant portrait showcasing realistic texture work, detailed skin wrinkles, and strong contrast. This traditional drawing demonstrates expertise in animal anatomy, volumetric form, and expressive mark-making with graphite and charcoal.",
+    images: {
+      hero: "/freehand-drawing/elephant/novendry-anggara-putra-novendry-anggara-13102022-0002.jpg",
+      beauty: [
+        "/freehand-drawing/elephant/novendry-anggara-putra-novendry-anggara-13102022-0002.jpg",
+      ],
+      wireframe:
+        "/freehand-drawing/elephant/novendry-anggara-putra-novendry-anggara-13102022-0002.jpg",
+      textures: [
+        {
+          name: "Elephant Drawing",
+          url: "/freehand-drawing/elephant/novendry-anggara-putra-novendry-anggara-13102022-0002.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "skull-drawing",
+    title: "Skull Study",
+    category: "Freehand Drawing",
+    polycount: 0,
+    software: ["Pencil", "Graphite"],
+    description:
+      "A classic anatomical skull study featuring precise bone structure, detailed shading, and accurate proportions. This foundational drawing demonstrates understanding of cranial anatomy, light rendering, and traditional graphite drawing techniques essential for character artists.",
+    images: {
+      hero: "/freehand-drawing/skull/novendry-anggara-putra-novendry-anggara-13102022-0003.jpg",
+      beauty: [
+        "/freehand-drawing/skull/novendry-anggara-putra-novendry-anggara-13102022-0003.jpg",
+      ],
+      wireframe:
+        "/freehand-drawing/skull/novendry-anggara-putra-novendry-anggara-13102022-0003.jpg",
+      textures: [
+        {
+          name: "Skull Drawing",
+          url: "/freehand-drawing/skull/novendry-anggara-putra-novendry-anggara-13102022-0003.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "skull-punk-drawing",
+    title: "Skull Punk",
+    category: "Freehand Drawing",
+    polycount: 0,
+    software: ["Pen", "Ink"],
+    description:
+      "A stylized punk-rock skull illustration featuring bold linework, decorative elements, and edgy aesthetic. This drawing showcases creative interpretation of traditional skull imagery with strong ink work, pattern design, and illustrative style perfect for graphic design applications.",
+    images: {
+      hero: "/freehand-drawing/skull-punk/novendry-anggara-putra-novendry-anggara-13102022-0004.jpg",
+      beauty: [
+        "/freehand-drawing/skull-punk/novendry-anggara-putra-novendry-anggara-13102022-0004.jpg",
+      ],
+      wireframe:
+        "/freehand-drawing/skull-punk/novendry-anggara-putra-novendry-anggara-13102022-0004.jpg",
+      textures: [
+        {
+          name: "Skull Punk Drawing",
+          url: "/freehand-drawing/skull-punk/novendry-anggara-putra-novendry-anggara-13102022-0004.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "verestrium-props-environment-1",
+    title: "Verestrium Props & Environment - Set 1",
+    category: "Verestrium Legacy",
+    polycount: 95000,
+    software: ["Blender", "Substance 3D Painter", "Photoshop"],
+    description:
+      "A comprehensive collection of game-ready props and environmental assets for the Verestrium Legacy fantasy RPG project. Features detailed texturing, modular design, and optimized topology for real-time rendering in game engines.",
+    images: {
+      hero: "/verestrium-legacy/props-environment/novendry-anggara-putra-1.jpg",
+      beauty: [
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-2.jpg",
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-3.jpg",
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-4.jpg",
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-5.jpg",
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-6.jpg",
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-7.jpg",
+      ],
+      wireframe:
+        "/verestrium-legacy/props-environment/novendry-anggara-putra-7.jpg",
+      textures: [
+        {
+          name: "Asset 1",
+          url: "/verestrium-legacy/props-environment/novendry-anggara-putra-1.jpg",
+        },
+        {
+          name: "Asset 2",
+          url: "/verestrium-legacy/props-environment/novendry-anggara-putra-2.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "verestrium-props-environment-2",
+    title: "Verestrium Props & Environment - Set 2",
+    category: "Verestrium Legacy",
+    polycount: 120000,
+    software: ["Blender", "Substance 3D Painter", "ZBrush"],
+    description:
+      "Extended asset library for Verestrium Legacy featuring fantasy architectural elements, interactive props, and environmental details. Includes PBR textures, LOD optimization, and comprehensive UV mapping for seamless integration into the game world.",
+    images: {
+      hero: "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled.jpg",
+      beauty: [
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled0.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled1.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled2.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled3.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled4.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled5.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled6.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled7.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled8.jpg",
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled9.jpg",
+      ],
+      wireframe:
+        "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled9.jpg",
+      textures: [
+        {
+          name: "Environment Asset",
+          url: "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled.jpg",
+        },
+        {
+          name: "Prop Detail",
+          url: "/verestrium-legacy/props-environtment-1/novendry-anggara-putra-untitled0.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "verestrium-sword",
+    title: "Verestrium Legendary Sword",
+    category: "Verestrium Legacy",
+    polycount: 15000,
+    software: ["Blender", "Substance 3D Painter", "ZBrush"],
+    description:
+      "A hero weapon asset for Verestrium Legacy - an ornate fantasy sword featuring intricate engravings, magical runes, and premium material work. Designed as a legendary tier item with detailed normal maps, metallic workflows, and animated glow effects.",
+    images: {
+      hero: "/verestrium-legacy/sword/novendry-anggara-putra-11.jpg",
+      beauty: [
+        "/verestrium-legacy/sword/novendry-anggara-putra-22.jpg",
+        "/verestrium-legacy/sword/novendry-anggara-putra-33.jpg",
+        "/verestrium-legacy/sword/novendry-anggara-putra-44.jpg",
+        "/verestrium-legacy/sword/novendry-anggara-putra-55.jpg",
+        "/verestrium-legacy/sword/novendry-anggara-putra-66.jpg",
+        "/verestrium-legacy/sword/novendry-anggara-putra-77.jpg",
+      ],
+      wireframe: "/verestrium-legacy/sword/novendry-anggara-putra-55.jpg",
+      textures: [
+        {
+          name: "Sword Main",
+          url: "/verestrium-legacy/sword/novendry-anggara-putra-11.jpg",
+        },
+        {
+          name: "Sword Detail",
+          url: "/verestrium-legacy/sword/novendry-anggara-putra-22.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "dragon-creature",
+    title: "Dragon",
+    category: "Creature",
+    polycount: 180000,
+    software: ["ZBrush", "Blender", "Substance 3D Painter"],
+    description:
+      "A detailed fantasy dragon sculpt featuring realistic scales, muscular anatomy, and expressive poses. This creature showcases advanced organic sculpting in ZBrush with both clay and fully textured renders, demonstrating expertise in creature design, anatomy, and detailed surface work.",
+    images: {
+      hero: "/creature/dragon/novendry-anggara-putra-full-texture.jpg",
+      beauty: [
+        "/creature/dragon/novendry-anggara-putra-front-pose.jpg",
+        "/creature/dragon/novendry-anggara-putra-side-pose.jpg",
+        "/creature/dragon/novendry-anggara-putra-full-clay.jpg",
+        "/creature/dragon/novendry-anggara-putra-hex-clay.jpg",
+        "/creature/dragon/novendry-anggara-putra-hex-texture.jpg",
+      ],
+      wireframe: "/creature/dragon/novendry-anggara-putra-hex-clay.jpg",
+      textures: [
+        {
+          name: "Textured Render",
+          url: "/creature/dragon/novendry-anggara-putra-full-texture.jpg",
+        },
+        {
+          name: "Clay Render",
+          url: "/creature/dragon/novendry-anggara-putra-full-clay.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "old-butgold-creature",
+    title: "Old But Gold",
+    category: "Creature",
+    polycount: 45000,
+    software: ["ZBrush", "Substance 3D Painter", "Photoshop"],
+    description:
+      "A stylized creature skull design with a playful 'Old But Gold' theme. This piece showcases creative character design with detailed bone structure, decorative elements, and vibrant texturing. Perfect for demonstrating both technical sculpting skills and artistic personality in creature work.",
+    images: {
+      hero: "/creature/old-butgold/novendry-anggara-putra-1.jpg",
+      beauty: [
+        "/creature/old-butgold/novendry-anggara-putra-2.jpg",
+        "/creature/old-butgold/novendry-anggara-putra-4.jpg",
+      ],
+      wireframe: "/creature/old-butgold/novendry-anggara-putra-4.jpg",
+      textures: [
+        {
+          name: "Main Render",
+          url: "/creature/old-butgold/novendry-anggara-putra-1.jpg",
+        },
+        {
+          name: "Detail View",
+          url: "/creature/old-butgold/novendry-anggara-putra-2.jpg",
         },
       ],
     },
