@@ -127,7 +127,7 @@ const Home: React.FC = () => {
         {/* Main Content */}
         <div className="relative z-20 px-6 md:px-12 py-12 max-w-[1800px] mx-auto">
           {/* Header / Nav */}
-          <header className="flex justify-between items-start mb-24 md:mb-32">
+          <header className="flex justify-between items-start mb-16 md:mb-32">
             <div>
               <h1 className="font-display font-bold text-xl md:text-2xl leading-none uppercase tracking-tight text-white">
                 Novendry
@@ -153,7 +153,7 @@ const Home: React.FC = () => {
           </header>
 
           {/* Hero Text */}
-          <section className="mb-32 relative">
+          <section className="mb-16 md:mb-32 relative">
             <AnimatedHeroTitle />
 
             <div
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
               <p className="max-w-md text-gray-400 text-lg font-light leading-relaxed">
                 {ARTIST_INFO.bio}
               </p>
-              <div className="flex gap-6 text-white">
+              <div className="flex flex-wrap gap-4 md:gap-6 text-white">
                 <a
                   href={ARTIST_INFO.socials.artstation}
                   target="_blank"
@@ -189,8 +189,8 @@ const Home: React.FC = () => {
           </section>
 
           {/* --- UNIQUE PROJECT SHOWCASE --- */}
-          <section className="mb-40" id="work" ref={containerRef}>
-            <div className="mb-16">
+          <section className="mb-20 md:mb-40" id="work" ref={containerRef}>
+            <div className="mb-8 md:mb-16">
               <div className="flex items-end justify-between border-b border-white/10 pb-4 mb-8">
                 <span className="font-mono text-xs text-gray-500">
                   (01) INDEX
@@ -201,7 +201,7 @@ const Home: React.FC = () => {
               </div>
 
               {/* Category Filter */}
-              <div className="flex gap-8 overflow-x-auto pb-4 no-scrollbar mask-gradient-x">
+              <div className="flex gap-4 md:gap-8 overflow-x-auto pb-4 no-scrollbar mask-gradient-x -mx-6 px-6 md:mx-0 md:px-0">
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat}
@@ -282,13 +282,16 @@ const Home: React.FC = () => {
           </section>
 
           {/* Technical Arsenal */}
-          <section className="mb-24 border-t border-white/20 pt-24" id="skills">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+          <section
+            className="mb-16 md:mb-24 border-t border-white/20 pt-12 md:pt-24"
+            id="skills"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-24">
               <div className="lg:col-span-4">
                 <span className="font-mono text-xs text-gray-500 block mb-6">
                   (02) CAPABILITIES
                 </span>
-                <h3 className="font-display text-5xl font-bold uppercase mb-8 leading-none text-white">
+                <h3 className="font-display text-3xl md:text-5xl font-bold uppercase mb-4 md:mb-8 leading-none text-white">
                   Technical
                   <br />
                   Arsenal
@@ -302,7 +305,7 @@ const Home: React.FC = () => {
 
               <div className="lg:col-span-8 overflow-hidden relative">
                 {/* Infinite Software Marquee */}
-                <div className="w-full relative py-8 border-y border-white/10 mb-12 mask-gradient-x">
+                <div className="w-full relative py-4 md:py-8 border-y border-white/10 mb-8 md:mb-12 mask-gradient-x">
                   <div className="flex whitespace-nowrap animate-scroll hover:animation-play-state-paused">
                     {[
                       ...softwareSkills,
@@ -311,15 +314,15 @@ const Home: React.FC = () => {
                     ].map((skill, i) => (
                       <div
                         key={`${skill.name}-${i}`}
-                        className="inline-flex items-center gap-4 mx-8 group clickable"
+                        className="inline-flex items-center gap-2 md:gap-4 mx-4 md:mx-8 group clickable"
                       >
                         <span className="text-gray-600 group-hover:text-white transition-colors duration-300">
                           {React.cloneElement(
                             skill.icon as React.ReactElement<any>,
-                            { size: 36 }
+                            { size: 24 }
                           )}
                         </span>
-                        <span className="font-display text-4xl font-bold text-transparent text-outline group-hover:text-white transition-colors duration-300 uppercase">
+                        <span className="font-display text-xl md:text-4xl font-bold text-transparent text-outline group-hover:text-white transition-colors duration-300 uppercase">
                           {skill.name}
                         </span>
                         <Asterisk size={12} className="text-gray-600" />
@@ -329,12 +332,12 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Bento Grid for Specialties */}
-                <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-white/10">
+                <div className="grid grid-cols-2 md:grid-cols-3 border-t border-l border-white/10">
                   {specialtySkills.map((skill, i) => (
                     <div
                       key={skill.name}
                       className={`
-                             group relative border-r border-b border-white/10 p-8 flex flex-col justify-between 
+                             group relative border-r border-b border-white/10 p-4 md:p-8 flex flex-col justify-between 
                              aspect-square md:aspect-auto md:h-[240px] clickable
                              transition-all duration-300 hover:bg-white hover:text-black
                              ${
@@ -355,7 +358,7 @@ const Home: React.FC = () => {
                       </div>
 
                       <div>
-                        <h4 className="font-display text-2xl font-bold uppercase mb-2 leading-none">
+                        <h4 className="font-display text-base md:text-2xl font-bold uppercase mb-2 leading-none">
                           {skill.name}
                         </h4>
                         <div className="w-full h-[1px] bg-current opacity-20 group-hover:opacity-100 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
@@ -368,22 +371,22 @@ const Home: React.FC = () => {
           </section>
 
           {/* Footer */}
-          <footer className="border-t border-white/20 pt-24 pb-12 flex flex-col md:flex-row justify-between items-end gap-12 text-white">
+          <footer className="border-t border-white/20 pt-12 md:pt-24 pb-8 md:pb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-12 text-white">
             <div>
-              <h2 className="font-display text-6xl md:text-8xl font-black uppercase leading-none mb-4">
+              <h2 className="font-display text-4xl sm:text-6xl md:text-8xl font-black uppercase leading-none mb-4">
                 Let's
                 <br />
                 Create
               </h2>
               <a
                 href={`mailto:${ARTIST_INFO.socials.email}`}
-                className="text-xl md:text-2xl text-gray-400 hover:text-white border-b border-gray-700 hover:border-white transition-all pb-1 inline-block clickable"
+                className="text-base sm:text-xl md:text-2xl text-gray-400 hover:text-white border-b border-gray-700 hover:border-white transition-all pb-1 inline-block clickable break-all"
               >
                 {ARTIST_INFO.socials.email}
               </a>
             </div>
 
-            <div className="flex flex-col items-end gap-4 text-right">
+            <div className="flex flex-col items-start md:items-end gap-4 text-left md:text-right w-full md:w-auto">
               <div className="flex gap-6">
                 <a
                   href={ARTIST_INFO.socials.artstation}
@@ -398,7 +401,7 @@ const Home: React.FC = () => {
                   LinkedIn
                 </a>
               </div>
-              <p className="font-mono text-xs text-gray-600 mt-8">
+              <p className="font-mono text-xs text-gray-600 mt-4 md:mt-8">
                 &copy; {new Date().getFullYear()} NOVENDRY ANGGARA PUTRA
               </p>
             </div>
