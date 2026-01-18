@@ -182,9 +182,12 @@ const AllProjects: React.FC = () => {
                           ? "SYSTEM_READY"
                           : project.category}
                       </div>
-                      <h3 className="font-display font-bold text-2xl uppercase leading-none text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all">
+                      <motion.h3
+                        layoutId={`project-title-${project.id}`}
+                        className="font-display font-bold text-2xl uppercase leading-none text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all"
+                      >
                         {project.title}
-                      </h3>
+                      </motion.h3>
                     </div>
                   </div>
                 </Link>

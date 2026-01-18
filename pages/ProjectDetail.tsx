@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { PROJECTS } from "../constants";
 import { ArrowLeft, ArrowDown, Box, Layers, Maximize2 } from "lucide-react";
@@ -40,9 +41,12 @@ const ProjectDetail: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 z-20">
           <div className="max-w-[1800px] mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-t border-white/30 pt-8">
-              <h1 className="font-display text-5xl md:text-8xl font-black uppercase leading-[0.9]">
+              <motion.h1
+                layoutId={`project-title-${project.id}`}
+                className="font-display text-5xl md:text-8xl font-black uppercase leading-[0.9]"
+              >
                 {project.title}
-              </h1>
+              </motion.h1>
               <div className="flex flex-col gap-4 font-mono text-xs md:text-sm text-gray-300">
                 <div className="flex gap-12">
                   <div>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PROJECTS, SKILLS, ARTIST_INFO, CATEGORIES } from "../constants";
 import {
@@ -68,48 +70,49 @@ const Home: React.FC = () => {
       <div className="relative w-full bg-[#0a0a0a] min-h-screen">
         {/* 
         --- FLOATING LENS (Desktop Only) --- 
-        This element follows the cursor and shows the active project image.
-        Z-Index logic: It sits below the text (z-10) but above the background (z-0).
+        Moved to Portal to escape the scale/transform context of PageTransition
       */}
-        <div
-          className="fixed top-0 left-0 pointer-events-none z-10 hidden md:block overflow-hidden rounded-lg shadow-2xl transition-opacity duration-300"
-          style={{
-            width: "400px",
-            height: "280px",
-            transform: `translate(${cursorPos.x - 200}px, ${
-              cursorPos.y - 140
-            }px) rotate(${hoveredProject ? "-5deg" : "0deg"}) scale(${
-              hoveredProject ? 1 : 0.5
-            })`,
-            opacity: hoveredProject ? 1 : 0,
-          }}
-        >
-          {activeProjectData && (
-            <div className="relative w-full h-full bg-gray-900">
-              <img
-                src={activeProjectData.images.hero}
-                alt="Preview"
-                className="w-full h-full object-cover animate-pulse" // Simple pulse to show it's "live"
-                style={{ animationDuration: "3s" }}
-              />
-              {/* Scanline overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none"></div>
+        {createPortal(
+          <div
+            className="fixed top-0 left-0 pointer-events-none z-[9990] hidden md:block overflow-hidden rounded-lg shadow-2xl transition-opacity duration-300"
+            style={{
+              width: "400px",
+              height: "280px",
+              transform: `translate(${cursorPos.x - 200}px, ${
+                cursorPos.y - 140
+              }px) rotate(${hoveredProject ? "-5deg" : "0deg"}) scale(${
+                hoveredProject ? 1 : 0.5
+              })`,
+              opacity: hoveredProject ? 1 : 0,
+            }}
+          >
+            {activeProjectData && (
+              <div className="relative w-full h-full bg-gray-900 transition-colors duration-300">
+                <img
+                  src={activeProjectData.images.hero}
+                  alt="Preview"
+                  className="w-full h-full object-cover"
+                />
+                {/* Scanline overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none"></div>
 
-              {/* Info Badge inside floating card */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center px-3 py-2 bg-black/60 backdrop-blur-md rounded border border-white/10">
-                <span className="text-[10px] font-mono text-white uppercase tracking-widest truncate max-w-[200px]">
-                  {activeProjectData.title}
-                </span>
-                <span className="text-[10px] font-mono text-green-400">
-                  {activeProjectData.polycount > 1000
-                    ? `${(activeProjectData.polycount / 1000).toFixed(1)}k`
-                    : activeProjectData.polycount}{" "}
-                  Tris
-                </span>
+                {/* Info Badge inside floating card */}
+                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center px-3 py-2 bg-black/60 backdrop-blur-md rounded border border-white/10">
+                  <span className="text-[10px] font-mono text-white uppercase tracking-widest truncate max-w-[200px]">
+                    {activeProjectData.title}
+                  </span>
+                  <span className="text-[10px] font-mono text-green-400">
+                    {activeProjectData.polycount > 1000
+                      ? `${(activeProjectData.polycount / 1000).toFixed(1)}k`
+                      : activeProjectData.polycount}{" "}
+                    Tris
+                  </span>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>,
+          document.body
+        )}
 
         {/* Main Content */}
         <div className="relative z-20 px-6 md:px-12 py-12 max-w-[1800px] mx-auto">
@@ -225,9 +228,12 @@ const Home: React.FC = () => {
                           <span className="font-mono text-[10px] sm:text-xs md:text-sm text-gray-500 shrink-0">
                             {(index + 1).toString().padStart(2, "0")}
                           </span>
-                          <h3 className="font-display text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black uppercase leading-none transition-transform duration-500 origin-left group-hover:scale-105 md:group-hover:skew-x-6">
+                          <motion.h3
+                            layoutId={`project-title-${project.id}`}
+                            className="font-display text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black uppercase leading-none transition-transform duration-500 origin-left group-hover:scale-105 md:group-hover:skew-x-6"
+                          >
                             {project.title}
-                          </h3>
+                          </motion.h3>
                         </div>
 
                         {/* Meta Data (Visible on Desktop Right) */}

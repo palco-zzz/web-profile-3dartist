@@ -54,14 +54,6 @@ const Cursor = () => {
   );
 };
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
-
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -70,7 +62,6 @@ const App: React.FC = () => {
       <div className="min-h-screen w-full bg-background text-white selection:bg-white selection:text-black">
         <AnimatedRoutes isLoading={isLoading} setIsLoading={setIsLoading} />
         <Cursor />
-        <ScrollToTop />
       </div>
     </Router>
   );
