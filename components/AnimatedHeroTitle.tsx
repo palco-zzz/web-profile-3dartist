@@ -155,13 +155,13 @@ const AnimatedHeroTitle: React.FC = () => {
     },
   };
 
-  const line1 = "Digital";
-  const line2 = "Sculptor";
+  const line1 = "3D";
+  const line2 = "Artist";
 
   return (
     <div style={{ perspective: isMobile ? "none" : "1000px" }}>
       <motion.div
-        className="font-display text-[11vw] sm:text-[13vw] md:text-[13vw] leading-[0.9] md:leading-[0.8] font-black uppercase text-[#222] select-none flex flex-col relative"
+        className="font-display font-black uppercase text-[#222] select-none flex flex-col items-center justify-center relative w-full text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -181,20 +181,54 @@ const AnimatedHeroTitle: React.FC = () => {
           />
         )}
 
-        {/* Line 1: Digital */}
+        {/* Line 1: 3D - MASSIVE BACKGROUND ELEMENT */}
         <motion.div
-          className="flex overflow-hidden mix-blend-screen"
+          className="flex items-center justify-center overflow-hidden text-[35vw] md:text-[32vw] leading-[0.7] tracking-tighter"
           variants={wordVariants}
           style={{ transform: isMobile ? "none" : "translateZ(50px)" }}
         >
+          {/* We treat "3D" as a single block for alignment, but animate chars individually */}
           {line1.split("").map((char, i) => (
-            <MagneticChar key={i} char={char} isMobile={isMobile} />
+            <div key={i} className="relative">
+              {/* Base Layer: Dim Outline */}
+              <div
+                className="text-transparent"
+                style={{ WebkitTextStroke: "2px rgba(255,255,255,0.15)" }}
+              >
+                <MagneticChar char={char} isMobile={isMobile} />
+              </div>
+
+              {/* Overlay Layer: Moving Glow Mask */}
+              {/* We duplicate the character strictly for the glow effect */}
+              <motion.div
+                className="absolute inset-0 text-transparent pointer-events-none z-10"
+                initial={{ WebkitMaskPosition: "100% 0" }}
+                animate={{ WebkitMaskPosition: "-150% 0" }}
+                transition={{
+                  duration: 3,
+                  ease: "linear",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                style={{
+                  WebkitTextStroke: "2px rgba(255,255,255,0.8)",
+                  WebkitMaskImage:
+                    "linear-gradient(110deg, transparent 40%, black 50%, transparent 60%)",
+                  WebkitMaskSize: "300% 100%",
+                  maskImage:
+                    "linear-gradient(110deg, transparent 40%, black 50%, transparent 60%)",
+                  maskSize: "300% 100%",
+                }}
+              >
+                <MagneticChar char={char} isMobile={isMobile} />
+              </motion.div>
+            </div>
           ))}
         </motion.div>
 
-        {/* Line 2: Sculptor */}
+        {/* Line 2: ARTIST - FOREGROUND OVERLAY */}
         <motion.div
-          className="flex overflow-hidden text-white"
+          className="flex overflow-hidden text-white text-[15vw] md:text-[13vw] leading-[0.9] -mt-[2vw] md:-mt-[1vw] relative z-20 mix-blend-normal"
           variants={wordVariants}
           style={{ transform: isMobile ? "none" : "translateZ(80px)" }}
         >
