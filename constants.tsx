@@ -158,6 +158,35 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    id: "mirene-character",
+    title: "Mirene",
+    category: "Character",
+    polycount: 22000,
+    software: ["Blender", "ZBrush", "Substance 3D Painter"],
+    description:
+      "Mirene is a stylized fantasy character featuring elegant design with detailed costume elements and expressive facial features. The model showcases high-quality texturing and refined sculpting techniques for game-ready character art.",
+    sketchfabId: "",
+    images: {
+      hero: "/character-portfolio/mirene/novendry-anggara-putra-mirene.jpg",
+      beauty: [
+        "/character-portfolio/mirene/novendry-anggara-putra-mirene2.jpg",
+        "/character-portfolio/mirene/novendry-anggara-putra-mirene3.jpg",
+      ],
+      wireframe:
+        "/character-portfolio/mirene/novendry-anggara-putra-mirene3.jpg",
+      textures: [
+        {
+          name: "Main Render",
+          url: "/character-portfolio/mirene/novendry-anggara-putra-mirene.jpg",
+        },
+        {
+          name: "Detail View",
+          url: "/character-portfolio/mirene/novendry-anggara-putra-mirene2.jpg",
+        },
+      ],
+    },
+  },
+  {
     id: "scifi-trooper",
     title: "Heavy Assault Trooper",
     category: "Character",
@@ -216,6 +245,34 @@ export const PROJECTS: Project[] = [
         {
           name: "Normal",
           url: "https://picsum.photos/seed/gun-normal/500/500",
+        },
+      ],
+    },
+  },
+  {
+    id: "product-showcase",
+    title: "Product Visualization",
+    category: "Product Design",
+    polycount: 8000,
+    software: ["Blender", "Substance 3D Painter", "Photoshop"],
+    description:
+      "A collection of high-quality product visualization renders showcasing various industrial and consumer product designs. Features realistic materials, studio lighting setups, and professional presentation aesthetics for commercial applications.",
+    images: {
+      hero: "/character-portfolio/product-design/novendry-anggara-putra-untitled14.jpg",
+      beauty: [
+        "/character-portfolio/product-design/novendry-anggara-putra-untitled15.jpg",
+        "/character-portfolio/product-design/novendry-anggara-putra-untitled17.jpg",
+      ],
+      wireframe:
+        "/character-portfolio/product-design/novendry-anggara-putra-untitled17.jpg",
+      textures: [
+        {
+          name: "Render 1",
+          url: "/character-portfolio/product-design/novendry-anggara-putra-untitled14.jpg",
+        },
+        {
+          name: "Render 2",
+          url: "/character-portfolio/product-design/novendry-anggara-putra-untitled15.jpg",
         },
       ],
     },
