@@ -23,42 +23,6 @@ import {
 // NOTE: Replace the placeholder image URLs with your actual file paths (e.g., '/assets/skull-hero.jpg')
 export const PROJECTS: Project[] = [
   {
-    id: "calavera-gentleman",
-    title: "Calavera Gentleman",
-    category: "Character",
-    polycount: 22500,
-    software: ["Blender", "Substance 3D Painter", "ZBrush", "Marmoset"],
-    description:
-      'A stylized fusion of Dia de los Muertos aesthetics and formal fashion. This character features intricate hand-painted geometric patterns on the skull, contrasted with procedural fabric textures on the suit. The goal was to create a high-fidelity "designer toy" aesthetic with PBR materials, focusing on clean topology and vibrant color theory.',
-    sketchfabId: "",
-    images: {
-      // PLACEMENT: Put your side-profile skull image here
-      hero: "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2500&auto=format&fit=crop",
-      beauty: [
-        // PLACEMENT: Put your front/back view images here
-        "https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=2500&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2500&auto=format&fit=crop",
-      ],
-      // PLACEMENT: Put your wireframe render here
-      wireframe:
-        "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2500&auto=format&fit=crop&saturation=-100",
-      textures: [
-        {
-          name: "Albedo",
-          url: "https://picsum.photos/seed/calavera-alb/500/500",
-        },
-        {
-          name: "Roughness",
-          url: "https://picsum.photos/seed/calavera-rgh/500/500",
-        },
-        {
-          name: "Metallic",
-          url: "https://picsum.photos/seed/calavera-met/500/500",
-        },
-      ],
-    },
-  },
-  {
     id: "maid-character",
     title: "Maid",
     category: "Character",
@@ -187,64 +151,119 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: "scifi-trooper",
-    title: "Heavy Assault Trooper",
+    id: "highschool-girl-character",
+    title: "High School Girl",
     category: "Character",
-    polycount: 65000,
-    software: ["ZBrush", "Blender", "Substance 3D Painter", "Photoshop"],
+    polycount: 16500,
+    software: ["Blender", "ZBrush", "Substance 3D Painter", "Photoshop"],
     description:
-      "A next-gen game ready character designed for a sci-fi shooter. Focused on hard-surface blending with cloth simulation. The armor pieces were modeled using boolean workflows in Blender, while the undersuit features cloth sculpting refined in ZBrush.",
+      "A realistic high school girl character featuring detailed uniform texturing, natural hair simulation, and expressive facial features. The model includes comprehensive turnaround views showcasing clean topology and professional texturing workflow for character modeling.",
     sketchfabId: "",
     images: {
-      hero: "https://picsum.photos/seed/noven-trooper/1200/800",
+      hero: "/character-portfolio/high-school-girl/novendry-anggara-putra-closeup.jpg",
       beauty: [
-        "https://picsum.photos/seed/noven-trooper-1/1200/800",
-        "https://picsum.photos/seed/noven-trooper-2/1200/800",
+        "/character-portfolio/high-school-girl/novendry-anggara-putra-front.jpg",
+        "/character-portfolio/high-school-girl/novendry-anggara-putra-back.jpg",
+        "/character-portfolio/high-school-girl/novendry-anggara-putra-left.jpg",
+        "/character-portfolio/high-school-girl/novendry-anggara-putra-right.jpg",
       ],
-      wireframe: "https://picsum.photos/seed/noven-trooper/1200/800?grayscale",
+      wireframe:
+        "/character-portfolio/high-school-girl/novendry-anggara-putra-front.jpg",
       textures: [
         {
-          name: "Albedo",
-          url: "https://picsum.photos/seed/mat-albedo/500/500",
+          name: "Closeup Detail",
+          url: "/character-portfolio/high-school-girl/novendry-anggara-putra-closeup.jpg",
         },
         {
-          name: "Normal",
-          url: "https://picsum.photos/seed/mat-normal/500/500",
-        },
-        {
-          name: "Roughness",
-          url: "https://picsum.photos/seed/mat-rough/500/500?grayscale",
-        },
-        {
-          name: "Metallic",
-          url: "https://picsum.photos/seed/mat-metal/500/500?grayscale",
+          name: "Full Body",
+          url: "/character-portfolio/high-school-girl/novendry-anggara-putra-front.jpg",
         },
       ],
     },
   },
   {
-    id: "antique-revolver",
-    title: "Vintage Magnum Revolver",
-    category: "Product Design",
-    polycount: 12000,
-    software: ["Blender", "Substance 3D Painter", "Photoshop"],
+    id: "alien-head-creature",
+    title: "Alien Head",
+    category: "Creature",
+    polycount: 28000,
+    software: ["Blender", "ZBrush", "Substance 3D Painter"],
     description:
-      "A highly detailed antique firearm. The focus was on realistic texturing, specifically wood grain wear and metal oxidation (rust/patina) to tell the story of a weapon that has seen decades of use.",
+      "An alien creature head design featuring detailed organic sculpting, advanced surface texturing, and expressive alien anatomy. This project showcases high-poly sculpting techniques with intricate skin detail and realistic subsurface scattering materials for creature design.",
+    sketchfabId: "",
     images: {
-      hero: "https://picsum.photos/seed/noven-gun/1200/800",
+      hero: "/character-portfolio/alien-head/novendry-anggara-putra-render-1.jpg",
       beauty: [
-        "https://picsum.photos/seed/noven-gun-1/1200/800",
-        "https://picsum.photos/seed/noven-gun-2/1200/800",
+        "/character-portfolio/alien-head/novendry-anggara-putra-render-2.jpg",
+        "/character-portfolio/alien-head/novendry-anggara-putra-render-3.jpg",
       ],
-      wireframe: "https://picsum.photos/seed/noven-gun/1200/800?grayscale",
+      wireframe:
+        "/character-portfolio/alien-head/novendry-anggara-putra-render-3.jpg",
       textures: [
         {
-          name: "Albedo",
-          url: "https://picsum.photos/seed/gun-albedo/500/500",
+          name: "Main Render",
+          url: "/character-portfolio/alien-head/novendry-anggara-putra-render-1.jpg",
         },
         {
-          name: "Normal",
-          url: "https://picsum.photos/seed/gun-normal/500/500",
+          name: "Detail View",
+          url: "/character-portfolio/alien-head/novendry-anggara-putra-render-2.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "female-townsfolk-character",
+    title: "Female Townsfolk",
+    category: "Character",
+    polycount: 19000,
+    software: ["Blender", "ZBrush", "Substance 3D Painter"],
+    description:
+      "A detailed fantasy character design featuring traditional medieval clothing and realistic fabric rendering. This townsfolk character showcases meticulous attention to costume detail, natural body proportions, and professional character texturing for game-ready assets.",
+    sketchfabId: "",
+    images: {
+      hero: "/character-portfolio/female-townsfolk/novendry-anggara-putra-townfolk-female-young2.jpg",
+      beauty: [
+        "/character-portfolio/female-townsfolk/novendry-anggara-putra-townfolk-female-young2.jpg",
+      ],
+      wireframe:
+        "/character-portfolio/female-townsfolk/novendry-anggara-putra-townfolk-female-young3.jpg",
+      textures: [
+        {
+          name: "Main View",
+          url: "/character-portfolio/female-townsfolk/novendry-anggara-putra-townfolk-female-young2.jpg",
+        },
+        {
+          name: "Alternate View",
+          url: "/character-portfolio/female-townsfolk/novendry-anggara-putra-townfolk-female-young3.jpg",
+        },
+      ],
+    },
+  },
+  {
+    id: "gowld-character",
+    title: "Gowld",
+    category: "Character",
+    polycount: 12000,
+    software: ["Blender", "Substance 3D Painter"],
+    description:
+      "A stylized Funko Pop-inspired character design featuring clean geometric forms, vibrant colors, and playful proportions. This project showcases character design with simplified topology, high-contrast texturing, and professional rendering for collectible figure aesthetics.",
+    sketchfabId: "",
+    images: {
+      hero: "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v12.jpg",
+      beauty: [
+        "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v13.jpg",
+        "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v14.jpg",
+        "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v15.jpg",
+      ],
+      wireframe:
+        "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v15.jpg",
+      textures: [
+        {
+          name: "Render 1",
+          url: "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v12.jpg",
+        },
+        {
+          name: "Render 2",
+          url: "/character-portfolio/gowld/novendry-anggara-putra-funko-2-v13.jpg",
         },
       ],
     },
@@ -274,95 +293,6 @@ export const PROJECTS: Project[] = [
           name: "Render 2",
           url: "/character-portfolio/product-design/novendry-anggara-putra-untitled15.jpg",
         },
-      ],
-    },
-  },
-  {
-    id: "fantasy-ruins",
-    title: "Eldritch Ruins Environment",
-    category: "Architecture",
-    polycount: 150000,
-    software: ["Blender", "ZBrush", "Substance 3D Painter"],
-    description:
-      "Modular environment kit created for a fantasy RPG. Utilizes trim sheets for the stone architecture and vertex painting for moss/dirt blending. Rendered in Blender Cycles.",
-    images: {
-      hero: "https://picsum.photos/seed/noven-ruins/1200/600",
-      beauty: [
-        "https://picsum.photos/seed/noven-ruins-1/1200/800",
-        "https://picsum.photos/seed/noven-ruins-2/1200/800",
-      ],
-      wireframe: "https://picsum.photos/seed/noven-ruins/1200/600?grayscale",
-      textures: [
-        {
-          name: "Trim Sheet",
-          url: "https://picsum.photos/seed/ruins-trim/500/500",
-        },
-        {
-          name: "Moss Alpha",
-          url: "https://picsum.photos/seed/ruins-moss/500/500",
-        },
-      ],
-    },
-  },
-  {
-    id: "creature-bust",
-    title: "Abyssal Creature Bust",
-    category: "Creature",
-    polycount: 25000,
-    software: ["ZBrush", "Substance 3D Painter", "Photoshop"],
-    description:
-      "A study in organic sculpting and subsurface scattering. This creature concept explores aquatic alien anatomy. Sculpted in ZBrush and composited in Photoshop.",
-    images: {
-      hero: "https://picsum.photos/seed/noven-creature/1000/1000",
-      beauty: ["https://picsum.photos/seed/noven-creature-1/1000/1000"],
-      wireframe:
-        "https://picsum.photos/seed/noven-creature/1000/1000?grayscale",
-      textures: [
-        {
-          name: "SSS Color",
-          url: "https://picsum.photos/seed/skin-color/500/500",
-        },
-        {
-          name: "Displacement",
-          url: "https://picsum.photos/seed/skin-disp/500/500",
-        },
-      ],
-    },
-  },
-  {
-    id: "cyber-vehicle",
-    title: "Hover-Bike Prototype",
-    category: "Verestrium Legacy",
-    polycount: 45000,
-    software: ["Blender", "Photoshop", "Krita"],
-    description:
-      "Hard surface vehicle design. Modeled using boolean operations in Blender. The design language mixes industrial machinery with aerodynamic racing aesthetics. Final paint-over done in Krita.",
-    images: {
-      hero: "https://picsum.photos/seed/noven-bike/1200/800",
-      beauty: ["https://picsum.photos/seed/noven-bike-1/1200/800"],
-      wireframe: "https://picsum.photos/seed/noven-bike/1200/800?grayscale",
-      textures: [
-        {
-          name: "Paint Mask",
-          url: "https://picsum.photos/seed/bike-mask/500/500",
-        },
-      ],
-    },
-  },
-  {
-    id: "prop-radio",
-    title: "Military Field Radio",
-    category: "Product Design",
-    polycount: 4500,
-    software: ["Blender", "Substance 3D Painter"],
-    description:
-      "A hero prop for a FPS game. High poly modeling done in Blender. Texturing in Substance 3D Painter focuses on storytelling: tape residue, scratches, and dust accumulation.",
-    images: {
-      hero: "https://picsum.photos/seed/noven-radio/1000/1000",
-      beauty: ["https://picsum.photos/seed/noven-radio-1/1000/1000"],
-      wireframe: "https://picsum.photos/seed/noven-radio/1000/1000?grayscale",
-      textures: [
-        { name: "Albedo", url: "https://picsum.photos/seed/radio-alb/500/500" },
       ],
     },
   },
