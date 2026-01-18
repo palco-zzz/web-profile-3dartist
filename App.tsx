@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
+import AllProjects from "./pages/AllProjects";
 
 import LoadingScreen from "./components/LoadingScreen";
 import { AnimatePresence } from "framer-motion";
@@ -105,6 +106,14 @@ const AnimatedRoutes = ({
             element={
               <PageTransition>
                 <ProjectDetail />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <PageTransition>
+                <AllProjects />
               </PageTransition>
             }
           />

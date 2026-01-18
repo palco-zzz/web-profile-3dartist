@@ -210,54 +210,66 @@ const Home: React.FC = () => {
 
             <div className="flex flex-col">
               {filteredProjects.length > 0 ? (
-                filteredProjects.map((project, index) => (
-                  <Link
-                    to={`/project/${project.id}`}
-                    key={project.id}
-                    className="group relative border-b border-white/10 clickable w-full"
-                    onMouseEnter={() => setHoveredProject(project.id)}
-                    onMouseLeave={() => setHoveredProject(null)}
-                  >
-                    <div className="py-8 md:py-16 flex flex-col md:flex-row md:items-center justify-between transition-all duration-300 group-hover:px-4">
-                      {/* Title & Index */}
-                      <div className="relative z-20 mix-blend-difference text-white flex items-baseline gap-3 sm:gap-6 md:gap-12 pointer-events-none">
-                        <span className="font-mono text-[10px] sm:text-xs md:text-sm text-gray-500 shrink-0">
-                          {(index + 1).toString().padStart(2, "0")}
-                        </span>
-                        <h3 className="font-display text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black uppercase leading-none transition-transform duration-500 origin-left group-hover:scale-105 md:group-hover:skew-x-6">
-                          {project.title}
-                        </h3>
-                      </div>
+                <>
+                  {filteredProjects.slice(0, 5).map((project, index) => (
+                    <Link
+                      to={`/project/${project.id}`}
+                      key={project.id}
+                      className="group relative border-b border-white/10 clickable w-full"
+                      onMouseEnter={() => setHoveredProject(project.id)}
+                      onMouseLeave={() => setHoveredProject(null)}
+                    >
+                      <div className="py-8 md:py-16 flex flex-col md:flex-row md:items-center justify-between transition-all duration-300 group-hover:px-4">
+                        {/* Title & Index */}
+                        <div className="relative z-20 mix-blend-difference text-white flex items-baseline gap-3 sm:gap-6 md:gap-12 pointer-events-none">
+                          <span className="font-mono text-[10px] sm:text-xs md:text-sm text-gray-500 shrink-0">
+                            {(index + 1).toString().padStart(2, "0")}
+                          </span>
+                          <h3 className="font-display text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black uppercase leading-none transition-transform duration-500 origin-left group-hover:scale-105 md:group-hover:skew-x-6">
+                            {project.title}
+                          </h3>
+                        </div>
 
-                      {/* Meta Data (Visible on Desktop Right) */}
-                      <div className="relative z-20 mix-blend-difference hidden md:flex flex-col items-end gap-2 text-white pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity">
-                        <span className="font-mono text-xs uppercase tracking-widest">
-                          {project.category}
-                        </span>
-                        <div className="flex items-center gap-2 text-[10px] font-mono">
-                          <Box size={12} />{" "}
-                          {project.software.slice(0, 2).join(" + ")}
+                        {/* Meta Data (Visible on Desktop Right) */}
+                        <div className="relative z-20 mix-blend-difference hidden md:flex flex-col items-end gap-2 text-white pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity">
+                          <span className="font-mono text-xs uppercase tracking-widest">
+                            {project.category}
+                          </span>
+                          <div className="flex items-center gap-2 text-[10px] font-mono">
+                            <Box size={12} />{" "}
+                            {project.software.slice(0, 2).join(" + ")}
+                          </div>
+                        </div>
+
+                        {/* Mobile Only Image (Fallback since no hover) */}
+                        <div className="md:hidden mt-6 aspect-video w-full overflow-hidden rounded bg-gray-900 border border-white/10">
+                          <img
+                            src={project.images.hero}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+
+                        <div className="md:hidden mt-4 flex justify-between items-center">
+                          <span className="font-mono text-xs text-gray-500 uppercase">
+                            {project.category}
+                          </span>
+                          <ArrowRight className="text-white" size={20} />
                         </div>
                       </div>
+                    </Link>
+                  ))}
 
-                      {/* Mobile Only Image (Fallback since no hover) */}
-                      <div className="md:hidden mt-6 aspect-video w-full overflow-hidden rounded bg-gray-900 border border-white/10">
-                        <img
-                          src={project.images.hero}
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-
-                      <div className="md:hidden mt-4 flex justify-between items-center">
-                        <span className="font-mono text-xs text-gray-500 uppercase">
-                          {project.category}
-                        </span>
-                        <ArrowRight className="text-white" size={20} />
-                      </div>
-                    </div>
-                  </Link>
-                ))
+                  {/* View All Button */}
+                  <div className="py-12 md:py-24 text-center">
+                    <Link
+                      to="/projects"
+                      className="inline-block px-8 py-4 border border-white/20 rounded-full font-mono text-xs uppercase hover:bg-white hover:text-black transition-all clickable group"
+                    >
+                      View All Archives ({PROJECTS.length})
+                    </Link>
+                  </div>
+                </>
               ) : (
                 <div className="py-32 text-center border-b border-white/10">
                   <p className="font-mono text-gray-600">
