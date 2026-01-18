@@ -56,11 +56,17 @@ const Cursor = () => {
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isFirstMount, setIsFirstMount] = useState(true);
 
   return (
     <Router>
       <div className="min-h-screen w-full bg-background text-white selection:bg-white selection:text-black">
-        <AnimatedRoutes isLoading={isLoading} setIsLoading={setIsLoading} />
+        <AnimatedRoutes
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          isFirstMount={isFirstMount}
+          setIsFirstMount={setIsFirstMount}
+        />
         <Cursor />
       </div>
     </Router>
@@ -71,11 +77,19 @@ const App: React.FC = () => {
 const AnimatedRoutes = ({
   isLoading,
   setIsLoading,
+  isFirstMount,
+  setIsFirstMount,
 }: {
   isLoading: boolean;
   setIsLoading: (val: boolean) => void;
+  isFirstMount: boolean;
+  setIsFirstMount: (val: boolean) => void;
 }) => {
   const location = useLocation();
+
+  const handleMount = () => {
+    if (isFirstMount) setIsFirstMount(false);
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -87,7 +101,7 @@ const AnimatedRoutes = ({
           <Route
             path="/"
             element={
-              <PageTransition>
+              <PageTransition isFirstMount={isFirstMount} onMount={handleMount}>
                 <Home />
               </PageTransition>
             }
@@ -95,7 +109,7 @@ const AnimatedRoutes = ({
           <Route
             path="/project/:id"
             element={
-              <PageTransition>
+              <PageTransition isFirstMount={isFirstMount} onMount={handleMount}>
                 <ProjectDetail />
               </PageTransition>
             }
@@ -103,7 +117,7 @@ const AnimatedRoutes = ({
           <Route
             path="/projects"
             element={
-              <PageTransition>
+              <PageTransition isFirstMount={isFirstMount} onMount={handleMount}>
                 <AllProjects />
               </PageTransition>
             }

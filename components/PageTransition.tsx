@@ -1,13 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 interface PageTransitionProps {
   children: React.ReactNode;
+  isFirstMount?: boolean;
+  onMount?: () => void;
 }
 
-const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
+const PageTransition: React.FC<PageTransitionProps> = ({
+  children,
+  isFirstMount = false,
+  onMount,
+}) => {
+  const shouldSkipIntro = useRef(isFirstMount);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (isFirstMount && onMount) {
+      onMount();
+    }
   }, []);
 
   const panelTransition = {
@@ -19,21 +30,20 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
     <>
       <motion.div
         className="w-full"
+        // If first mount, we might want a simpler fade or no scale effect to match loading screen
+        // But keeping it consistent is fine.
         initial={{
           opacity: 0,
           scale: 0.95,
-          filter: "blur(10px) brightness(0.5)",
         }}
         animate={{
           opacity: 1,
           scale: 1,
-          filter: "blur(0px) brightness(1)",
           transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
         }}
         exit={{
           opacity: 0,
           scale: 0.95,
-          filter: "blur(10px) brightness(0.5)",
           transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
         }}
       >
@@ -42,9 +52,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
 
       {/* 
         BARN DOORS OVERLAY (Seamless Combination)
-        We use a specific z-index layout. 
-        On Exit: Doors Slide IN (Close)
-        On Enter: Doors Slide OUT (Open)
+        These are the EXIT doors (Slide IN to close)
       */}
       <div className="fixed inset-0 z-[9999] pointer-events-none flex w-screen h-screen top-0 left-0">
         {/* Left Panel */}
@@ -54,7 +62,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
           animate={{
             x: "-100%",
             transition: { ...panelTransition, delay: 0.2 },
-          }} // Enter: Starts closed (0) -> Opens (-100%)? No, see below logic
+          }}
           exit={{ x: "0%", transition: panelTransition }}
         >
           {/* Decorative Marquee on Left Door */}
@@ -78,39 +86,30 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
             PLEASE WAIT // SYSTEM INITIALIZING // PLEASE WAIT
           </div>
         </motion.div>
-
-        {/* 
-            Since AnimatePresence mode="wait" unmounts the old one, we need the NEW page
-            to start with doors CLOSED and then OPEN them. 
-            So we need a separate "Intro" set of doors? 
-            Or we reverse the logic?
-            
-            Standard Pattern for "Wait" Mode:
-            1. Old Page: Doors Open -> Doors Close (Exit Animation)
-            2. New Page: Doors Closed (Initial) -> Doors Open (Enter Animation)
-         */}
       </div>
 
       {/* 
          THE INTRO DOORS (For the New Page)
-         These exist ONLY when the component mounts to simulate the "opening".
+         Only show these if it is NOT the first mount.
       */}
-      <div className="fixed inset-0 z-[9999] pointer-events-none flex w-screen h-screen top-0 left-0">
-        <motion.div
-          className="h-full w-1/2 bg-[#050505] relative border-r border-[#222] flex items-center justify-end overflow-hidden"
-          initial={{ x: "0%" }} // Start Closed
-          animate={{ x: "-100%", transition: { ...panelTransition } }} // Slide Left
-        >
-          <div className="absolute right-0 top-0 h-full w-[1px] bg-white/20 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
-        </motion.div>
-        <motion.div
-          className="h-full w-1/2 bg-[#050505] relative border-l border-[#222] flex items-center justify-start overflow-hidden"
-          initial={{ x: "0%" }} // Start Closed
-          animate={{ x: "100%", transition: { ...panelTransition } }} // Slide Right
-        >
-          <div className="absolute left-0 top-0 h-full w-[1px] bg-white/20 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
-        </motion.div>
-      </div>
+      {!shouldSkipIntro.current && (
+        <div className="fixed inset-0 z-[9999] pointer-events-none flex w-screen h-screen top-0 left-0">
+          <motion.div
+            className="h-full w-1/2 bg-[#050505] relative border-r border-[#222] flex items-center justify-end overflow-hidden"
+            initial={{ x: "0%" }} // Start Closed
+            animate={{ x: "-100%", transition: { ...panelTransition } }} // Slide Left
+          >
+            <div className="absolute right-0 top-0 h-full w-[1px] bg-white/20 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+          </motion.div>
+          <motion.div
+            className="h-full w-1/2 bg-[#050505] relative border-l border-[#222] flex items-center justify-start overflow-hidden"
+            initial={{ x: "0%" }} // Start Closed
+            animate={{ x: "100%", transition: { ...panelTransition } }} // Slide Right
+          >
+            <div className="absolute left-0 top-0 h-full w-[1px] bg-white/20 shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+          </motion.div>
+        </div>
+      )}
     </>
   );
 };

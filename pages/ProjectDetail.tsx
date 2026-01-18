@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { PROJECTS } from "../constants";
@@ -14,20 +15,27 @@ const ProjectDetail: React.FC = () => {
   return (
     <div className="bg-background min-h-screen text-white pb-24">
       {/* Navigation Overlay */}
-      <div className="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-center mix-blend-difference text-white pointer-events-none">
-        <Link
-          to="/"
-          className="flex items-center gap-2 pointer-events-auto group clickable"
-        >
-          <div className="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-            <ArrowLeft size={16} />
+      {/* Sticky Top Navbar (Portal to escape PageTransition transforms) */}
+      {createPortal(
+        <header className="fixed top-0 left-0 w-full z-[9990] px-6 py-4 md:px-12 md:py-6 flex justify-between items-center mix-blend-difference text-white pointer-events-none">
+          <Link
+            to="/"
+            className="flex items-center gap-3 group clickable pointer-events-auto"
+          >
+            <div className="w-10 h-10 md:w-12 md:h-12 border border-white/30 rounded-full flex items-center justify-center bg-black/20 backdrop-blur-sm group-hover:bg-white group-hover:text-black transition-all duration-300">
+              <ArrowLeft size={18} />
+            </div>
+            <span className="hidden md:block font-mono text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">
+              Back to Index
+            </span>
+          </Link>
+
+          <div className="font-mono text-xs md:text-sm uppercase tracking-wider opacity-60">
+            {project.id}
           </div>
-          <span className="font-mono text-sm hidden md:inline opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">
-            BACK TO INDEX
-          </span>
-        </Link>
-        <span className="font-mono text-xs">{project.id.toUpperCase()}</span>
-      </div>
+        </header>,
+        document.body
+      )}
 
       {/* Hero Header */}
       <div className="relative h-[80vh] w-full overflow-hidden">
