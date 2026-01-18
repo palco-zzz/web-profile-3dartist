@@ -11,8 +11,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 import AnimatedHeroTitle from "../components/AnimatedHeroTitle";
-import LoadingScreen from "../components/LoadingScreen";
-import { AnimatePresence } from "framer-motion";
 
 const Home: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -36,13 +34,8 @@ const Home: React.FC = () => {
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === activeCategory);
 
-  // Loading State
-  const [isLoading, setIsLoading] = useState(true);
-
   // Smooth Mouse Animation Loop
   useEffect(() => {
-    if (isLoading) return; // Don't animate cursor during loading
-
     const handleMouseMove = (e: MouseEvent) => {
       targetPos.current = { x: e.clientX, y: e.clientY };
     };
@@ -65,19 +58,13 @@ const Home: React.FC = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
-  }, [isLoading]);
+  }, []);
 
   // Get active project data for the modal
   const activeProjectData = PROJECTS.find((p) => p.id === hoveredProject);
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <LoadingScreen onComplete={() => setIsLoading(false)} key="loading" />
-        )}
-      </AnimatePresence>
-
       <div className="relative w-full bg-[#0a0a0a] min-h-screen">
         {/* 
         --- FLOATING LENS (Desktop Only) --- 
