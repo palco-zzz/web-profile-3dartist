@@ -233,11 +233,11 @@ const Home: React.FC = () => {
                   >
                     <div className="py-8 md:py-16 flex flex-col md:flex-row md:items-center justify-between transition-all duration-300 group-hover:px-4">
                       {/* Title & Index */}
-                      <div className="relative z-20 mix-blend-difference text-white flex items-baseline gap-6 md:gap-12 pointer-events-none">
-                        <span className="font-mono text-xs md:text-sm text-gray-500">
+                      <div className="relative z-20 mix-blend-difference text-white flex items-baseline gap-3 sm:gap-6 md:gap-12 pointer-events-none">
+                        <span className="font-mono text-[10px] sm:text-xs md:text-sm text-gray-500 shrink-0">
                           {(index + 1).toString().padStart(2, "0")}
                         </span>
-                        <h3 className="font-display text-4xl md:text-8xl font-black uppercase leading-none transition-transform duration-500 origin-left group-hover:scale-105 group-hover:skew-x-6">
+                        <h3 className="font-display text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black uppercase leading-none transition-transform duration-500 origin-left group-hover:scale-105 md:group-hover:skew-x-6">
                           {project.title}
                         </h3>
                       </div>

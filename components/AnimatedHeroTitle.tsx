@@ -161,7 +161,7 @@ const AnimatedHeroTitle: React.FC = () => {
   return (
     <div style={{ perspective: isMobile ? "none" : "1000px" }}>
       <motion.div
-        className="font-display text-[15vw] md:text-[13vw] leading-[0.85] md:leading-[0.8] font-black uppercase text-[#222] select-none flex flex-col relative"
+        className="font-display text-[11vw] sm:text-[13vw] md:text-[13vw] leading-[0.9] md:leading-[0.8] font-black uppercase text-[#222] select-none flex flex-col relative"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
